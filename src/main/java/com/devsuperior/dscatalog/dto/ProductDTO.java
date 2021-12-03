@@ -6,17 +6,42 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
+
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.entities.Product;
+import com.sun.istack.NotNull;
 
 public class ProductDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+	@NotBlank(message="Field can`t be Blank")
+	@NotEmpty(message="Field can`t be Empty")
+	@Size(min=5,max=60,message="Name Should have in between 5 to 60 characters ")
+	@NotNull
 	private String name;
+	@NotBlank(message="Field can`t be Blank")
+	@NotEmpty(message="Field can`t be Empty")
+	@NotNull
 	private String description;
+	@NotBlank(message="Field can`t be Blank")
+	@NotEmpty(message="Field can`t be Empty")
+	@NotNull
+
+	@Positive(message="Please Positive Values")
 	private Double price;
+	@NotBlank(message="Please Image is required")
+	@NotEmpty(message="Image Can`t be Empty")
+	@NotNull
 	private String imgUrl;
+	@NotBlank(message="Please Image is required")
+	@NotEmpty(message="Image Can`t be Empty")
+	@PastOrPresent(message="Date ca")
 	private Instant date;
 	
 	private List<CategoryDTO> categories = new ArrayList<>();
