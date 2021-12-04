@@ -19,12 +19,12 @@ public class UserDTO implements Serializable {
 	private Long id;
 	@NotNull
 	@NotEmpty(message ="Field is Required")
-	@NotBlank
+	@NotBlank(message="Field can`t be blank")
 	@Size(min=5,max=30,message="Name Should have in between 5 to 30 characters ")
 	private String firstName;
 	@NotNull
 	@NotEmpty(message ="Field is Required")
-	@NotBlank(message="Field can`t be blank")
+	@NotBlank(message="Field can`t be Blank")
 	private String lastName;
 	@NotNull
 	@NotBlank(message="Field can`t be blank")

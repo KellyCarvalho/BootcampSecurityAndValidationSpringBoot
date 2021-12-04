@@ -41,7 +41,7 @@ public class ProductDTO implements Serializable {
 	private String imgUrl;
 	@NotBlank(message="Please Image is required")
 	@NotEmpty(message="Image Can`t be Empty")
-	@PastOrPresent(message="Date ca")
+	@PastOrPresent(message="Date can`t be Past or Future")
 	private Instant date;
 	
 	private List<CategoryDTO> categories = new ArrayList<>();
